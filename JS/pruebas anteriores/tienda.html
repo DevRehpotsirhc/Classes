@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ventas</title>
+  </head>
+  <body>
+    <script>
+      let tienda = [
+        { producto: "arroz", valor: 1200 },
+        { producto: "leche", valor: 3000 },
+        { producto: "galletas", valor: 3200 },
+        { producto: "huevos", valor: 18000 },
+        { producto: "cafe", valor: 22000 },
+      ];
+      let dias = ["lunes", "martes", "miercoles", "jueves", "viernes"];
+      let ventas = [];
+
+      for (let i = 0; i < dias.length; i++) {
+        for (let j = 0; j < tienda.length; j++) {
+          let cantidad =
+            parseInt(
+              prompt(
+                `Digite la cantidad del ${dias[i]} para ${tienda[j].producto}`
+              )
+            ) || 0;
+          ventas.push({
+            dia: dias[i],
+            producto: tienda[j].producto,
+            cantidad: cantidad,
+            valor: tienda[j].valor,
+            total: cantidad * tienda[j].valor,
+          });
+        }
+      }
+
+      // Mostrar las ventas
+      ventas.forEach((venta, index) => {
+        console.log(
+          `Venta ${index + 1}: ${venta.dia}, ${venta.producto}, Cantidad: ${
+            venta.cantidad
+          }, Total: $${venta.total}`
+        );
+      });
+    </script>
+  </body>
+</html>

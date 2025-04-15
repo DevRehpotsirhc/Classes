@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portafolio de Christopher Aponte, estudiante en Análisis y Desarrollo de Software">
+    <title>Portafolio - Christopher Aponte</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/jpg" href="images/link.jpg">
+</head>
+<body>
+    <header>
+        <h1>Portafolio de Christopher Aponte</h1>
+        <img
+        src="images/yo.jpg" 
+        alt="fotografía de Christopher Aponte">
+        
+        <nav>
+            <a href="#estudios">Estudios</a>
+            <a href="#tecnologias">Tecnologías</a>
+            <a href="#contacto">Contacto</a>
+        </nav>
+    </header>
+
+    <main>
+    
+    <h2 id="estudios">Estudios</h2>
+
+    <p>Estudiante del <span title="Servicio Nacional de Aprendizaje">SENA</span> en <strong>Análisis y Desarrollo de Software</strong>, especializado en la administración de <strong>Base de Datos</strong>, el desarrollo <strong>Backend</strong> y el <strong>Análisis de Datos</strong>.</p>
+
+    <!-- Hacer un collage con los certificados de estudio relevantes -->
+
+    <h2 id="tecnologias">Tecnologías</h2>
+    <!-- Sería interesante hacer un carrusel con las distintas tecnologías justo aquí -->
+    <ol>
+        <li>Pyhton</li>
+        <li>Análisis de Datos (Pandas, Matplotlib, Seaborn, NumPy)</li>
+        <li>Django Rest Framework (En Proceso)</li>
+        <li>PostgreSQL</li>
+        <li>MySQL</li>
+    </ol>
+    
+    <section>
+        <h2 id="contacto">Contacto</h2>
+        <form method="post" action="#">
+            <fieldset>
+                <legend>Envíame un correo</legend>
+                <div>
+                    <label>Nombre:
+                    <input type="text" name="name" placeholder="Christopher Aponte" required>
+                    </label>
+                </div>
+                <div>
+                    <label>Correo:
+                    <input type="email" name="email" placeholder="christopher4ponte@gmail.com" required>
+                    </label>
+                </div>
+                <div>
+                    <legend>Razón:</legend>
+                    <textarea name="razon" required></textarea>
+                </div>
+                <button type="submit">Enviar Correo</button>
+            </fieldset>
+            <small>Recuerda que tienes mi información de contacto en varias secciones de la página. Puedes descargar mi hoja de vida <a href="#">aquí</a>.</small><br><br><br>
+        </form>
+    </section>
+
+    </main>
+    
+    <footer>
+        <p>Desarrollado por Christopher Aponte</p>
+    </footer>
+</body>
+</html>

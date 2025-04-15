@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ejercicios</title>
+  </head>
+  <body>
+    <h1>Evidencia 1</h1>
+
+    <div class="ej1">
+      <h2>Ejercicio 1</h2>
+      <p>
+        Calcular el total que una persona debe pagar en un almacén de que vende
+        llantas, si el precio de cada llanta es de $80000 si se compran menos de
+        5 llantas y de $70000 si se compran 5 o más.
+      </p>
+      <script>
+        let cantidad, llanta;
+        cantidad = parseInt(prompt("Digite la cantidad de llantas compradas"));
+        if (cantidad < 5) {
+          llanta = 80000;
+          total = cantidad * llanta;
+        } else if (cantidad >= 5) {
+          llanta = 70000;
+          total = cantidad * llanta;
+        }
+        document.write(
+          "Cantidad comprada: ",
+          cantidad,
+          "\nValor de la compra: ",
+          total
+        );
+      </script>
+    </div>
+
+    <div class="ej2">
+      <h2>Ejercicio 2</h2>
+      <p>
+        En un supermercado se hace una promoción, mediante la cual el cliente
+        obtiene un descuento dependiendo de un número que se escoge al azar. Si
+        el numero escogido es menor que 74 el descuento es del 15% sobre el
+        total de la compra, si es mayor o igual a 74 el descuento es del 20%.
+        Obtener cuánto dinero se le descuenta.
+      </p>
+      <script>
+        let num = Math.floor(Math.random() * 100);
+        let compra = parseFloat(prompt("Valor de la compra"));
+        let descuento = 0;
+        if (num < 74) {
+          descuento = compra * 0.15;
+        } else if (num >= 74) {
+          descuento = compra * 0.2;
+        }
+        document.write("Descuento = ", descuento);
+      </script>
+    </div>
+
+    <div class="ej4">
+      <h2>Ejercicio 4</h2>
+      <p>
+        Una compañía de seguros está abriendo un área de finanzas y estableció
+        un programa para captar clientes, que consiste en lo siguiente: Si el
+        monto por el que se efectúa el aseguramiento de un cliente es menor que
+        $500.000 la cuota a pagar será por el 3% del monto, y si el monto es
+        mayor que $500.000 la cuota a pagar será el 2% del monto. La compañía de
+        seguros desea determinar cuál será la cuota que debe pagar cada cliente.
+      </p>
+      <script>
+        let monto = parseFloat(
+          prompt("Digite el monto a pagar del aseguramiento")
+        );
+        let cuota = 0;
+        if (monto < 500000) {
+          cuota = monto * 0.03;
+        } else if (monto > 500000) {
+          cuota = monto * 0.02;
+        }
+        document.write("Monto base: ", monto, "\nCuota: ", cuota);
+      </script>
+    </div>
+
+    <div class="ej5">
+      <h2>Ejercicio 5</h2>
+      <p>
+        En una universidad la matrícula de los alumnos se determina según el
+        número de materias que cursan. El costo de todas las materias es el
+        mismo. Se ha establecido un incentivo para estimular a los alumnos, el
+        cual consiste en lo siguiente: si el promedio obtenido por un alumno en
+        el último semestre cursado esta entre 4.0 y 5.0 inclusives, se le hará
+        un descuento del 30% sobre la matrícula y no se le cobrara IVA; si el
+        promedio obtenido es menor que 4.0 deberá pagar la matrícula completa,
+        la cual incluye el 10% de IVA. Obtener cuanto debe pagar un alumno.
+      </p>
+      <script>
+        let materia, promedio, total;
+        materia = parseFloat(prompt("Digite el valor de las materias"));
+        promedio = parseFloat(
+          prompt("Digite su promedio en el semestre (1.0 - 5.0)")
+        );
+        if (promedio >= 4.0 && promedio <= 5.0) {
+          total = materia * 0.3;
+        } else if (promedio < 4.0) {
+          total = materia * 1.1;
+        }
+        document.write("Total a pagar: ", total);
+      </script>
+    </div>
+
+    <section class="bucles">
+      <div class="ej2">
+        <h2>Ejercicio 2</h2>
+        <p>
+          Diseñe un pseudocódigo para obtener el resultado del escrutinio en las
+          elecciones del personero estudiantil de un colegio, se debe considerar
+          que hay 160 electores y que todos votaron. Se presentaron tres
+          candidatos a la elección. El algoritmo debe declarar el ganador entre
+          los tres candidatos que se presentaron a la elección, por mayoría
+          simple.
+        </p>
+        <script>
+          let can1 = 0, can2 = 0, can3 = 0, generador
+          for (let l = 1; l <= 160; l++) {
+            generador = Math.floor(Math.random() * 3)
+            if (generador == 0) {
+              can1++
+            } else if (generador == 1) {
+              can2++
+            } else if (generador == 2) {
+              can3++
+            }
+          }
+          total = can1 + can2 + can3
+          document.write("Candidato 1: ", can1, "<br>Candidato 2: ", can2, "<br>Candidato 3: ", can3, "<br>Total: ", total, "<br>")
+          if (can1 > can2) {
+            if (can1 > can3) {
+              document.write("Ganador: ", can1)
+            } else {
+              document.write("Ganador: ", can3)
+            }
+          } else if (can2 > can3) {
+            document.write("Ganador: ", can2)
+          } else {
+            document.write("Ganador: ", can3)
+          }
+        </script>
+      </div>
+
+      <div class="ej3">
+        <h2>Ejercicio 3</h2>
+        <p>
+          La Cía. MAZDA premia anualmente a sus mejores vendedores de acuerdo a la
+          siguiente tabla:
+
+            Si vendió Le corresponde de Comisión
+            sobre ventas totales
+            1000000 <= venta < 3000000 3%
+            3000000 <= venta < 5000000 4%
+            5000000 <= venta < 7000000 5%
+            7000000 <= venta < 10000000 6%
+
+          Diseñar un pseudocódigo que lea las ventas de 100 vendedores y que escriba la
+          comisión anual que le corresponda a cada vendedor. Nota ningún vendedor vende
+          más de 10000000 al año.
+        </p>
+        <script>
+          let venta, comision
+          for (let i = 1; i <= 100; i++) {
+            venta = Math.floor(Math.random() * 10000000)
+            if (1000000 <= venta < 3000000) {
+              comision = venta * 0.03
+            } else if (3000000 <= venta < 5000000) {
+              comision = venta * 0.04
+            } else if (5000000 <= venta < 7000000) {
+              comision = venta * 0.05
+            } else if (7000000 <= venta < 10000000) {
+              comision = venta * 0.06
+            }
+            document.write("Comisión de Vendedor ", i, ": $", comision, "<br>Venta: ", venta, "<br><br><br>")
+          }
+        </script>
+      </div>
+    </section>
+  </body>
+</html>

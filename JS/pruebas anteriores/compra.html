@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compra</title>
+</head>
+<body>
+    <script>
+        let monto, anterior;
+        monto = prompt("Digite un monto")
+        anterior = monto
+        if (monto >= 100) {
+            monto -= monto * 0.2 
+        } else if (monto >= 50) {
+            monto -= monto * 0.1
+        } else {
+            document.write("Monto anterior: ", anterior, "<br>");
+            document.write("Monto total: ", monto);
+        }
+        document.write("Monto anterior: ", anterior, "<br>");
+        document.write("Monto total: ", monto);
+    </script>
+</body>
+</html>

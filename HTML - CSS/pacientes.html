@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pacientes</title>
+  </head>
+  <body>
+    <script>
+      /*arreglo que almacena la información de pacientes en un hospital
+        Cada paciente tiene 3 elementos (Nombre, edad, diagnostico y costo del taratmiento)
+        Calcular y mostrar el costo total de los tratamientos de todos los pacientes*/
+      pacientes = [
+        {
+          //se crea arreglo pacientes
+          nombre: "Mario Perez",
+          edad: 56,
+          dx: "Fiebre Amarilla",
+          costo_tratamiento: 30,
+        },
+        {
+          nombre: "Gustavo Cerrano",
+          edad: 44,
+          dx: "Peste Negra",
+          costo_tratamiento: 28,
+        },
+        {
+          nombre: "Christopher Aponte",
+          edad: 333,
+          dx: "Falta de Sueño",
+          costo_tratamiento: 1000,
+        },
+        {
+          nombre: "Karem Romano",
+          edad: 22,
+          dx: "Fiebre",
+          costo_tratamiento: 20,
+        },
+        {
+          nombre: "Lorena Rondon",
+          edad: 34,
+          dx: "Estrés",
+          costo_tratamiento: 30,
+        },
+      ];
+
+      let total = 0;
+      pacientes.forEach((pacientes) => {
+        total += pacientes.costo_tratamiento;
+      });
+      document.write("Total: ", total);
+    </script>
+  </body>
+</html>

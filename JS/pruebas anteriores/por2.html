@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let venta, comision
+        for (let i = 1; i <= 100; i++) {
+          venta = Math.floor(Math.random() * 10000000)
+          if (1000000 <= venta < 3000000) {
+            comision = venta * 0.03
+          } else if (3000000 <= venta < 5000000) {
+            comision = venta * 0.04
+          } else if (5000000 <= venta < 7000000) {
+            comision = venta * 0.05
+          } else if (7000000 <= venta < 10000000) {
+            comision = venta * 0.06
+          }
+          document.write("Comisión de Vendedor ", i, ": $", comision, "<br>Venta: ", venta, "<br><br><br>")
+        }
+      </script>
+      
+</body>
+</html>
