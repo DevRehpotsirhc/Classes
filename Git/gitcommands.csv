@@ -15,5 +15,5 @@ git branch -d [rama], elimina una rama, git branch -d ejemplo
 git checkout [nombre], cambia de rama, git checkout ejemplo
 git diff [rama], muestra las diferencia dos ramas, git diff ejemplo / git diff main ejemplo
 git merge [rama], fusiona dos ramas, git merge ejemplo / git diff merge main ejemplo
-git push main origin, sube los cambios hecho al repositorio remoto
+git push origin main, sube los cambios hecho al repositorio remoto
 git pull origin main, actualiza el repositorio local con los cambios en el repositorio remoto
