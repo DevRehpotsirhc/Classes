@@ -8,6 +8,10 @@ git status, muestra el estado actual del repositorio incluyendo archivos sin añ
 git add [archivo/s], añade los archivos modificados/nuevos al próximo commit, git add . (El '.' añade todo el directorio actual) / git add ejemplo.py
 git reset HEAD [archivo/s], quita los archivos especificados para el siguiente commit, git reset HEAD . / git reset HEAD ejemplo.py
 git commit -m "[descripción]: [mensaje]", aplica los cambios a la branch seleccionada y añade un mensaje sobre los archivos añadidos, git commit -m "fix(login): corregí un problema con el formulario de login sobre la validación de contraseñas"
+git commit --amend -m "[descripción]: [mensaje]", modifica el mensaje del commit, git commit --amend -m "fix(login): corregí la validación de contraseñas"
+git reset --soft HEAD~1, quita el último commit pero mantiene los cambios
+git reset --hard HEAD~1, quita el último commit y elimina los cambios
+git revert [id commit], crea un commit sin los cambios hecho por id del commit seleccionado
 git log, muestra el historial de commits hechos
 git branch, muestra las ramas en el repositorio
 git branch [nombre], crea una rama en el repositorio, git branch ejemplo
@@ -16,4 +20,8 @@ git checkout [nombre], cambia de rama, git checkout ejemplo
 git diff [rama], muestra las diferencia dos ramas, git diff ejemplo / git diff main ejemplo
 git merge [rama], fusiona dos ramas, git merge ejemplo / git diff merge main ejemplo
 git push origin main, sube los cambios hecho al repositorio remoto
+git push origin main --force, fuerza que el repositorio remoto sea igual al local
 git pull origin main, actualiza el repositorio local con los cambios en el repositorio remoto
+git stash push -m "[mensaje]", crea un guardado temporal, git stash push -m "trabajo temporal"
+git stash list, muestra una lista con los guardados existentes
+git stash pop, muestra el guardado temporal
