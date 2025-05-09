@@ -25,3 +25,12 @@ git pull origin main, actualiza el repositorio local con los cambios en el repos
 git stash push -m "[mensaje]", crea un guardado temporal, git stash push -m "trabajo temporal"
 git stash list, muestra una lista con los guardados existentes
 git stash pop, muestra el guardado temporal
+git tag, muestra las versiones etiquetadas de la aplicación
+git tag v[major.minor.patch], se usa para dar asignarle una etiqueta de versión a la aplicación con SemVer, git tag v1.0.0
+git tag -a v[major.minor.patch] -m "[mensaje]", -a permite añadir metadatos como -m, git tag -a v1.0.0 -m "Primera versión oficial del sistema"
+git push origin v[major.minor.patch], sube una versión específica al repositorio remoto, git push origin v1.0.0
+git push origin --tags, sube todos los tags al repo remoto
+git checkout v[major.minor.patch], cambia la versión, git checkout v1.0.0
+git show v[major.minor.patch], muestra los detalles de la versión, git show v1.0.0
+git tag -d v[major.minor.patch], elimina una versión almacenada local, git tag -d v1.0.0
+git push origin --delete tag v[major.minor.patch], elimina una versión almacenado en el repo remoto, git push origin --delete tag v1.0.0
