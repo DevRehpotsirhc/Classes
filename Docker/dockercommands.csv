@@ -1,0 +1,24 @@
+comando, descripción, ejemplo
+docker run --name [nombre] -p[puerto local]:[puerto docker] -d [imagen], crea e inicializa un contenedor y le asigna los valores anteriores (-d no muestra los logs y es opcional), docker run --name backend -p8000:8000 -d python
+docker images, muestra las imagenes descargadas
+docker pull [imagen], descarga una imagen, docker pull python (descarga la última versión) / docker pull --platform linux/x86_64 python:3.12 (se indica la plataforma y la versión específica de cada uno)
+docker image rm [imagen], elimina una imagen, docker image rm python:3.12
+docker create [imagen], crea un contenedor, docker create python
+docker create --name [nombre] [imagen], --name le asigna un nombre, docker create --name backend python
+docker create -p[puerto local]:[puerto docker] --name [nombre] [imagen], -p le asigna un puerto, docker create -p8000:8000 --name backend python
+docker create --network [nombre red] ... [imagen], crea una imagen y lo añade a una red, docker create --network proyecto python 
+docker start [contenedor], abre el contenedor, docker start backend
+docker stop [contenedor], cierra el contenedor # El contenedor se detiene al finalizar una tarea, docker stop backend
+docker ps, muestra los contenedores abiertos
+docker ps -a, muestra todos los contenedores
+docker rm [contenedor], elimina el contenedor, docker rm backend
+docker logs [contenedor], muestra los registros (logs) del contenedor, docker logs backend
+docker logs --follow [contenedor], muestra los registros en tiempo real, docker logs --follow backend
+docker network ls, lista las redes creadas en docker
+docker network create [nombre red], crea una nueva red, docker network create proyecto
+docker network rm [nombre red], elimina una red, docker network rm proyecto
+docker build -t [nombre]:[etiqueta] [ruta], construye una imagen a partir del dockerfile, docker build -t prueba:1 . / docker build -t prueba .
+docker compose up --build -d, crea a partir de docker-compose.yml un entorno de contenedores
+docker compose up -d, abre el entorno creado por el docker-compose
+docker compose down, cierra el entorno de docker-compose 
+docker volume ls, lista los volumenes almacenados

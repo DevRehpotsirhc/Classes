@@ -1,0 +1,21 @@
+# ESTO ES UN EJEMPLO CON DJANGO EL requirements.txt NO ESXISTE EN ESTE CONTEXTO, ADEMÁS DE QUE PUEDE CAMBIAR MUCHO ESTE ARCHIVO DEPENDIENDO LAS TECNOLOGÍAS QUE ESTEMOS USANDO
+
+# Este archivo es usado para construir una imagen a partir de las indicaciones aquí escritas
+
+
+FROM python:3.13
+
+# Ruta en docker
+WORKDIR /app
+
+# Ruta local
+COPY . /app
+
+# Instalación de requerimientos al archivo contenedor
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Se expone el puerto de docker
+EXPOSE 8000
+
+# Comandos del servidor y puerto
+CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]

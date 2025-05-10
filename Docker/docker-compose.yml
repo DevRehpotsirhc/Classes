@@ -1,0 +1,45 @@
+# ESTE ARCHIVO SOLO ES UN EJEMPLO PUEDE CAMBIAR SEGUN LAS TECNOLOGÍAS NECESARIAS EN ESTE CASO USÉ POSTGRES Y PGADMIN4 COMO GUIA
+
+# Se usa para tener un entorno con multiples contenedores relacionados en una sola unidad
+
+
+
+
+# Se declaran todos los contenedores
+services:
+
+  # Base de datos
+  db:
+    image: postgres:17
+    restart: always   # Reinicia en caso de fallar
+    ports:
+      - "5432:5432"
+
+    # Limite de memoria para el docker-compose
+    shm_size: 128mb
+    
+    # Variables de entorno necesarias
+    environment:
+      POSTGRES_DB: proyecto
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 28362711
+    
+    # Persistencia de los datos
+    volumes:
+      - postgres_data:/var/lib/postgresql/data/
+
+  # Gestor de base de datos pgAdmin4
+  pgadmin:
+    image: dpage/pgadmin4
+    restart: always
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin@admin.com
+      PGADMIN_DEFAULT_PASSWORD: admin12345
+    ports:
+      - "80:80"
+    depends_on:
+      - db
+
+# Partición usada para la persistencia de los datos
+volumes:
+  postgres_data:
