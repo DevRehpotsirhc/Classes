@@ -5,8 +5,8 @@ git config --global user.email "[email]", cambia el email global de la configura
 git remote add origin "[repositorio remoto]", crea una conexión con un repositorio remoto, git remote add origin "https://github.com/DevRehpotsirhc/Portfolio.git"
 git clone "[repositorio remoto]", clona el repositorio remoto en local, git clone "https://github.com/DevRehpotsirhc/Portfolio.git"
 git status, muestra el estado actual del repositorio incluyendo archivos sin añadir y demás
-git add [archivo/s], añade los archivos modificados/nuevos al próximo commit, git add . (El '.' añade todo el directorio actual) / git add ejemplo.py
-git reset HEAD [archivo/s], quita los archivos especificados para el siguiente commit, git reset HEAD . / git reset HEAD ejemplo.py
+git add [archivo/s], añade los archivos modificados/nuevos al próximo commit, git add . (El '.' añade todo el directorio actual) / git add views.py
+git reset HEAD [archivo/s], quita los archivos especificados para el siguiente commit, git reset HEAD . / git reset HEAD views.py
 git commit -m "[descripción]: [mensaje]", aplica los cambios a la branch seleccionada y añade un mensaje sobre los archivos añadidos, git commit -m "fix(login): corregí un problema con el formulario de login sobre la validación de contraseñas"
 git commit --amend -m "[descripción]: [mensaje]", modifica el mensaje del commit, git commit --amend -m "fix(login): corregí la validación de contraseñas"
 git reset --soft HEAD~1, quita el último commit pero mantiene los cambios
@@ -14,10 +14,10 @@ git reset --hard HEAD~1, quita el último commit y elimina los cambios
 git revert [id commit], crea un commit sin los cambios hecho por id del commit seleccionado
 git log, muestra el historial de commits hechos
 git branch, muestra las ramas en el repositorio
-git branch [nombre], crea una rama en el repositorio, git branch ejemplo
-git branch -d [rama], elimina una rama, git branch -d ejemplo
-git checkout [nombre], cambia de rama, git checkout ejemplo
-git diff [rama], muestra las diferencia dos ramas, git diff ejemplo / git diff main ejemplo
+git branch -b [prefijo]/[función], crea una rama en el repositorio (-b es opcional y sirve para cambiar a la rama al crearla), git branch -b feature/login-form
+git branch -d [rama], elimina una rama, git branch -d fix/responsive
+git checkout [rama], cambia de rama, git checkout refactor/navbar
+git diff [rama], muestra las diferencia dos ramas (generalmente la rama activa vs la seleccionada), git diff test/gen_infos
 git merge [rama], fusiona dos ramas, git merge ejemplo / git diff merge main ejemplo
 git push origin main, sube los cambios hecho al repositorio remoto
 git push origin main --force, fuerza que el repositorio remoto sea igual al local
