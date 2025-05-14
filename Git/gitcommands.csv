@@ -35,3 +35,6 @@ git checkout v[major.minor.patch], cambia la versión, git checkout v1.0.0
 git show v[major.minor.patch], muestra los detalles de la versión, git show v1.0.0
 git tag -d v[major.minor.patch], elimina una versión almacenada local, git tag -d v1.0.0
 git push origin --delete tag v[major.minor.patch], elimina una versión almacenado en el repo remoto, git push origin --delete tag v1.0.0
+git restore ., quita los cambios hechos
+git restore --staged ., quita los cambios añadidos en el add
+git clean -fd, quita los archivos nuevos no añadidos al add 
