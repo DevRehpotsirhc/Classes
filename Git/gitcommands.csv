@@ -16,11 +16,12 @@ git log, muestra el historial de commits hechos
 git branch, muestra las ramas en el repositorio
 git branch [prefijo]/[función], crea una rama en el repositorio, git branch -b feature/login-form
 git branch -d [rama], elimina una rama, git branch -d fix/responsive
+git branch -vv, muestra el seguimiento que tienen las ramas con el repo remoto
 git checkout [rama], cambia de rama, git checkout refactor/navbar
 git checkout -b [rama], -b sirve para crear una rama nueva y cambiar a ella, git checkout -b refactor/navbar
 git diff [rama], muestra las diferencia dos ramas (generalmente la rama activa vs la seleccionada), git diff test/gen_infos
 git merge [rama], fusiona dos ramas, git merge ejemplo / git diff merge main ejemplo
-git push origin main, sube los cambios hecho al repositorio remoto
+git push -u origin [rama], sube los cambios hecho al repositorio remoto con seguimiento(-u hace que la próxima ya lo haga al origin sin tener que escribirlo)
 git push origin main --force, fuerza que el repositorio remoto sea igual al local
 git pull origin main, actualiza el repositorio local con los cambios en el repositorio remoto
 git stash push -m "[mensaje]", crea un guardado temporal, git stash push -m "trabajo temporal"
